@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="mn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Хэрэглэгчийн анкет</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Оюутны Бүртгэл</h1>
+
+        <nav>
+            <a href="#">Нүүр</a>
+            <a href="#">Анкет</a>
+            <a href="#">Тусламж</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>Хэрэглэгчийн Анкет Бөглөх</h2>
+
+            <form>
+
+                <fieldset>
+                    <legend>Хувийн мэдээлэл</legend>
+
+                    <label>Овог нэр:</label>
+                    <input type="text" name="name" required minlength="2">
+                    <br><br>
+
+                    <label>Email:</label>
+                    <input type="email" name="email" required>
+                    <br><br>
+
+                    <label>Нууц үг:</label>
+                    <input type="password" name="password" required minlength="6">
+                    <br><br>
+
+                    <label>Утас:</label>
+                    <input type="tel" name="phone" pattern="[0-9]{8}" required>
+                    <br><br>
+
+                    <label>Төрсөн огноо:</label>
+                    <input type="date" name="birthday" required>
+                    <br><br>
+
+                    <label>Хүйс:</label>
+                    <input type="radio" name="gender" value="male"> Эрэгтэй
+                    <input type="radio" name="gender" value="female"> Эмэгтэй
+
+                </fieldset>
+
+                <br>
+
+                <fieldset>
+                    <legend>Боловсрол ба сонирхол</legend>
+
+                    <label>Суралцаж буй түвшин:</label>
+
+                    <select name="degree">
+                        <option>Бакалавр</option>
+                        <option>Магистр</option>
+                        <option>Докторант</option>
+                    </select>
+
+                    <br><br>
+
+                    <label>Сонирхож буй технологи:</label>
+                    <br>
+
+                    <input type="checkbox" name="html"> HTML / CSS
+                    <br>
+
+                    <input type="checkbox" name="javascript"> JavaScript
+                    <br>
+
+                    <input type="checkbox" name="php"> PHP
+                    <br><br>
+
+                    <label>Зураг:</label>
+                    <input type="file" name="photo">
+
+                    <br><br>
+
+                    <label>Өөрийн тухай:</label>
+                    <br>
+
+                    <textarea rows="4" cols="40"></textarea>
+
+                </fieldset>
+
+                <br>
+
+                <button type="submit">Анкет Илгээх</button>
+                <button type="reset">Дахин эхлүүлэх</button>
+
+            </form>
+        </section>
+
+
+        <section>
+            <h2>Миний сонирхол</h2>
+
+            <ul>
+                <li>Тоглоом тоглох</li>
+                <li>Веб хөгжүүлэлт</li>
+                <li>Кино үзэх</li>
+            </ul>
+        </section>
+
+
+        <section>
+            <h2>Миний дүн</h2>
+
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Хичээл</th>
+                        <th>Дүн</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Веб зохиомж</td>
+                        <td>95</td>
+                    </tr>
+
+                    <tr>
+                        <td>Мэдээллийн сан</td>
+                        <td>88</td>
+                    </tr>
+
+                    <tr>
+                        <td>Алгоритм</td>
+                        <td>92</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>© 2026 Веб зохиомж хичээл</p>
+    </footer>
+
+</body>
+</html>
+
