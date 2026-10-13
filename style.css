@@ -1,6 +1,6 @@
 body {
-    background-color: gray;
-    color: white;
+    background-color: rgb(123,150,105);
+    color: rgb(230,230,230);
     font-family: 'Roboto', Arial, sans-serif;
     margin: 0;
     padding: 20px;
@@ -11,7 +11,7 @@ h1 {
 }
 
 h2 {
-    color: white;
+    color: rgb(230,230,230);
 }
 
 nav {
@@ -19,7 +19,7 @@ nav {
 }
 
 nav a {
-    color: white;
+    color: rgb(230,230,230);
     margin: 0 10px;
 }
 
@@ -28,17 +28,29 @@ nav a {
     width: 500px;
     padding: 20px;
     margin: 20px 0;
-    border: 2px solid white;
     border-radius: 10px;
+    color: black;
+    background-color: rgb(64,78,59);
+    border: 2px solid rgb(230,230,230);
 }
 
 fieldset {
     padding: 15px;
     border-radius: 8px;
+    background-color: rgb(186,200,177);
+    color: rgb(64,78,59);      
+    border: 2px solid rgb(108,132,134);
 }
 
 legend {
     font-weight: bold;
+    font-weight: bold;
+    font-weight: bold;
+    color: rgb(64,78,59);
+    background-color: rgb(186,200,177);
+    padding: 4px 12px;
+    border-radius: 8px;
+    border: 2px solid rgb(108,132,134);
 }
 
 input, select, textarea {
@@ -59,7 +71,8 @@ input, select, textarea {
 
 .tooltip {
     position: relative;
-    background-color: gray;
+    background-color: rgb(108,132,134);
+    color: rgb(230,230,230);
     padding: 0 6px;
     border-radius: 50%;
     cursor: help;
@@ -71,8 +84,8 @@ input, select, textarea {
     top: 25px;
     left: 0;
     width: 150px;
-    background-color: black;
-    color: white;
+    background-color: rgb(64,78,59);
+    color: rgb(230,230,230);
     padding: 5px;
     border-radius: 5px;
     font-size: 13px;
@@ -90,16 +103,28 @@ button {
 }
 
 .btn-send {
-    background-color: orange;
-    color: black;
+    background-color: rgb(108,132,134);
+    color: rgb(230,230,230);
+    transition: opacity 0.15s;
 }
-
+.btn-send:hover{
+    opacity: 0.7;
+}
+.btn-send:active{
+    opacity:0.2;
+}
 .btn-reset {
-    background-color: gray;
-    color: white;
+    background-color: rgb(230,230,230);
+    color: rgb(64,78,59);
+    transition: background-color 0.15s;
 }
-
-table {
+.btn-reset:hover{
+    background-color: rgb(244, 129, 129);
+}
+.btn-reset:actrive{
+    opacity:0.2;
+}
+table { 
     border-collapse: collapse;
 }
 
