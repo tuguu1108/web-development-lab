@@ -121,7 +121,7 @@ button {
 .btn-reset:hover{
     background-color: rgb(244, 129, 129);
 }
-.btn-reset:actrive{
+.btn-reset:active{
     opacity:0.2;
 }
 table { 
