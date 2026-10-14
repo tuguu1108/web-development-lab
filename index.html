@@ -1,140 +1,181 @@
 <!DOCTYPE html>
 <html lang="mn">
- 
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Хэрэглэгчийн анкет</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">  <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
- 
+
 <body>
- 
-    <header>
-        <h1>Оюутны Бүртгэл</h1>
-        <nav>
-            <a href="#">Нүүр</a>
-            <a href="#">Анкет</a>
-            <a href="#">Тусламж</a>
-        </nav>
-    </header>
- 
-    <main>
- 
-        <section>
-            <h2>Хэрэглэгчийн Анкет Бөглөх</h2>
- 
-            <form class="form-box">
- 
-                <fieldset>
-                    <legend>Хувийн мэдээлэл</legend>
- 
-                    <label>Овог нэр:</label>
-                    <input type="text" name="name" required minlength="2">
-                    <br><br>
- 
-                    <label>Email:</label>
-                    <input type="email" name="email" required>
-                    <br><br>
- 
-                    <label>Нууц үг:</label>
-                    <input type="password" name="password" required minlength="6">
-                    <span class="tooltip">?
-                        <span class="tooltip-text">Хамгийн багадаа 6 тэмдэгт</span>
-                    </span>
-                    <br><br>
- 
-                    <label>Утас:</label>
-                    <input type="tel" name="phone" pattern="[0-9]{8}" required>
-                    <br><br>
- 
-                    <label>Төрсөн огноо:</label>
-                    <input type="date" name="birthday" required>
-                    <br><br>
- 
-                    <label>Хүйс:</label>
-                    <input type="radio" name="gender" value="male"> Эрэгтэй
-                    <input type="radio" name="gender" value="female"> Эмэгтэй
-                </fieldset>
- 
-                <br>
- 
-                <fieldset>
-                    <legend>Боловсрол ба сонирхол</legend>
- 
-                    <label>Суралцаж буй түвшин:</label>
-                    <select name="degree">
-                        <option>Бакалавр</option>
-                        <option>Магистр</option>
-                        <option>Докторант</option>
-                    </select>
-                    <br><br>
- 
-                    <label>Сонирхож буй технологи:</label>
-                    <br>
-                    <input type="checkbox" name="html"> HTML / CSS
-                    <br>
-                    <input type="checkbox" name="javascript"> JavaScript
-                    <br>
-                    <input type="checkbox" name="php"> PHP
-                    <br><br>
- 
-                    <label>Зураг:</label>
-                    <input type="file" name="photo">
-                    <br><br>
- 
-                    <label>Өөрийн тухай:</label>
-                    <br>
-                    <textarea rows="5" cols="40"></textarea>
-                </fieldset>
- 
-                <br>
- 
-                <button class="btn-send" type="submit">Анкет Илгээх</button>
-                <button class="btn-reset" type="reset">Дахин эхлүүлэх</button>
-            </form>
-        </section>
- 
-        <section>
-            <h2>Миний сонирхол</h2>
-            <ul>
-                <li>Тоглоом тоглох</li>
-                <li>Веб хөгжүүлэлт</li>
-                <li>Кино үзэх</li>
-            </ul>
-        </section>
- 
-        <section>
-            <h2>Миний дүн</h2>
-            <table border="1">
-                <thead>
-                    <tr>
-                        <th>Хичээл</th>
-                        <th>Дүн</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Веб зохиомж</td>
-                        <td>95</td>
-                    </tr>
-                    <tr>
-                        <td>Мэдээллийн сан</td>
-                        <td>88</td>
-                    </tr>
-                    <tr>
-                        <td>Компьютерийн оюутан үндэс</td>
-                        <td>92</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
- 
-    </main>
- 
-    <footer>
-        <p>© 2026 Веб зохиомж хичээл</p>
-    </footer>
- 
+    <div class="page">
+
+        <header class="site-header">
+            <h1>Оюутны Бүртгэл</h1>
+            <nav class="nav">
+                <a href="#">Нүүр</a>
+                <a href="#">Анкет</a>
+                <a href="#">Тусламж</a>
+            </nav>
+        </header>
+
+        <div class="layout">
+
+            <main class="cards">
+
+                <section class="card card-wide">
+                    <h2>Хэрэглэгчийн Анкет Бөглөх</h2>
+
+                    <form class="form-box">
+                        <fieldset>
+                            <legend>Хувийн мэдээлэл</legend>
+
+                            <div class="field">
+                                <label for="name">Овог нэр:</label>
+                                <input id="name" type="text" name="name" required minlength="2">
+                            </div>
+
+                            <div class="field">
+                                <label for="email">Email:</label>
+                                <input id="email" type="email" name="email" required>
+                            </div>
+
+                            <div class="field">
+                                <label for="password">Нууц үг:</label>
+                                <div class="with-tip">
+                                    <input id="password" type="password" name="password" required minlength="6">
+                                    <span class="tooltip">?
+                                        <span class="tooltip-text">Хамгийн багадаа 6 тэмдэгт</span>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <label for="phone">Утас:</label>
+                                <input id="phone" type="tel" name="phone" pattern="[0-9]{8}" required>
+                            </div>
+
+                            <div class="field">
+                                <label for="birthday">Төрсөн огноо:</label>
+                                <input id="birthday" type="date" name="birthday" required>
+                            </div>
+
+                            <div class="field">
+                                <span class="label">Хүйс:</span>
+                                <div class="choices choices-row">
+                                    <label><input type="radio" name="gender" value="male"> Эрэгтэй</label>
+                                    <label><input type="radio" name="gender" value="female"> Эмэгтэй</label>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Боловсрол ба сонирхол</legend>
+
+                            <div class="field">
+                                <label for="degree">Суралцаж буй түвшин:</label>
+                                <select id="degree" name="degree">
+                                    <option>Бакалавр</option>
+                                    <option>Магистр</option>
+                                    <option>Докторант</option>
+                                </select>
+                            </div>
+
+                            <div class="field">
+                                <span class="label">Сонирхож буй технологи:</span>
+                                <div class="choices">
+                                    <label><input type="checkbox" name="html"> HTML / CSS</label>
+                                    <label><input type="checkbox" name="javascript"> JavaScript</label>
+                                    <label><input type="checkbox" name="php"> PHP</label>
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <label for="photo">Зураг:</label>
+                                <input id="photo" type="file" name="photo">
+                            </div>
+
+                            <div class="field">
+                                <label for="about">Өөрийн тухай:</label>
+                                <textarea id="about" name="about" rows="5"></textarea>
+                            </div>
+                        </fieldset>
+
+                        <div class="actions">
+                            <button class="btn-send" type="submit">Анкет Илгээх</button>
+                            <button class="btn-reset" type="reset">Дахин эхлүүлэх</button>
+                        </div>
+                    </form>
+                </section>
+
+                <section class="card">
+                    <h2>Миний сонирхол</h2>
+                    <ul>
+                        <li>Тоглоом тоглох</li>
+                        <li>Веб хөгжүүлэлт</li>
+                        <li>Кино үзэх</li>
+                    </ul>
+                </section>
+
+                <section class="card">
+                    <h2>Миний дүн</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Хичээл</th>
+                                <th>Дүн</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Веб зохиомж</td>
+                                <td>95</td>
+                            </tr>
+                            <tr>
+                                <td>Мэдээллийн сан</td>
+                                <td>88</td>
+                            </tr>
+                            <tr>
+                                <td>Компьютерийн оюутан үндэс</td>
+                                <td>92</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section class="card">
+                    <h2>Дундаж дүн</h2>
+                    <p class="stat">91.7</p>
+                    <p>3 хичээлийн дундаж</p>
+                </section>
+
+            </main>
+
+            <aside class="sidebar">
+                <section class="card">
+                    <h2>Хурдан холбоос</h2>
+                    <ul class="side-links">
+                        <li><a href="#">Анкет бөглөх</a></li>
+                        <li><a href="#">Миний сонирхол</a></li>
+                        <li><a href="#">Миний дүн</a></li>
+                    </ul>
+                </section>
+
+                <section class="card">
+                    <h2>Тусламж</h2>
+                    <p>Анкетын бүх талбарыг бөглөж, нууц үг дор хаяж 6 тэмдэгттэй байх ёстой.</p>
+                </section>
+            </aside>
+
+        </div>
+
+        <footer class="site-footer">
+            <p>© 2026 Веб зохиомж хичээл</p>
+        </footer>
+
+    </div>
 </body>
+
 </html>
- 

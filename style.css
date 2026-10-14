@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: rgb(123,150,105);
     color: rgb(230,230,230);
@@ -6,45 +10,126 @@ body {
     padding: 20px;
 }
 
-h1 {
-    text-align: center;
+h1, h2 {
+    margin: 0 0 12px;
 }
 
-h2 {
+a {
     color: rgb(230,230,230);
 }
 
-nav {
-    text-align: center;
+.page {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    min-height: calc(100vh - 40px);
 }
 
-nav a {
-    color: rgb(230,230,230);
-    margin: 0 10px;
-}
-
-.form-box {
-    position: relative;
-    width: 500px;
-    padding: 20px;
-    margin: 20px 0;
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 16px 24px;
     border-radius: 10px;
-    color: black;
     background-color: rgb(64,78,59);
     border: 2px solid rgb(230,230,230);
 }
 
+.site-header h1 {
+    margin: 0;
+}
+
+.nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav a {
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.15s;
+}
+
+.nav a:hover {
+    background-color: rgb(108,132,134);
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 24px;
+    align-items: start;
+    flex: 1;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: stretch;
+}
+
+.card-wide {
+    grid-column: 1 / -1; 
+}
+
+.card {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgb(64,78,59);
+    border: 2px solid rgb(230,230,230);
+}
+
+.sidebar {
+    display: grid;
+    gap: 24px;
+}
+
+.side-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 8px;
+}
+
+.stat {
+    font-size: 48px;
+    font-weight: bold;
+    margin: 8px 0;
+}
+
+.form-box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);  
+    gap: 20px;
+    color: black;
+}
+
+.form-box .actions {
+    grid-column: 1 / -1;
+}
+
 fieldset {
+    margin: 0;
     padding: 15px;
     border-radius: 8px;
     background-color: rgb(186,200,177);
-    color: rgb(64,78,59);      
+    color: rgb(64,78,59);
     border: 2px solid rgb(108,132,134);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
 }
 
 legend {
-    font-weight: bold;
-    font-weight: bold;
     font-weight: bold;
     color: rgb(64,78,59);
     background-color: rgb(186,200,177);
@@ -53,20 +138,52 @@ legend {
     border: 2px solid rgb(108,132,134);
 }
 
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.label,
+.field > label {
+    font-weight: bold;
+}
+
+.choices {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.choices-row {
+    flex-direction: row;
+    gap: 16px;
+}
+
 input, select, textarea {
     padding: 5px;
     border-radius: 5px;
+    font-family: inherit;
 }
 
-.badge {
-    position: absolute;
-    top: -10px;
-    right: -10px;
-    background-color: orange;
-    color: black;
-    padding: 5px 10px;
-    border-radius: 15px;
-    font-size: 14px;
+input[type="radio"],
+input[type="checkbox"] {
+    padding: 0;
+}
+
+textarea {
+    width: 100%;
+    resize: vertical;
+}
+
+.with-tip {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.with-tip input {
+    flex: 1;
 }
 
 .tooltip {
@@ -82,17 +199,24 @@ input, select, textarea {
     display: none;
     position: absolute;
     top: 25px;
-    left: 0;
+    right: 0;
     width: 150px;
     background-color: rgb(64,78,59);
     color: rgb(230,230,230);
     padding: 5px;
     border-radius: 5px;
     font-size: 13px;
+    z-index: 1;
 }
 
 .tooltip:hover .tooltip-text {
     display: block;
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-start;
+    gap: 12px;
 }
 
 button {
@@ -107,32 +231,61 @@ button {
     color: rgb(230,230,230);
     transition: opacity 0.15s;
 }
-.btn-send:hover{
-    opacity: 0.7;
-}
-.btn-send:active{
-    opacity:0.2;
-}
+
+.btn-send:hover { opacity: 0.7; }
+.btn-send:active { opacity: 0.2; }
+
 .btn-reset {
     background-color: rgb(230,230,230);
     color: rgb(64,78,59);
     transition: background-color 0.15s;
 }
-.btn-reset:hover{
-    background-color: rgb(244, 129, 129);
+
+.btn-reset:hover { background-color: rgb(244,129,129); }
+.btn-reset:active { opacity: 0.2; }
+
+.card ul {
+    margin: 0;
+    padding-left: 20px;
 }
-.btn-reset:active{
-    opacity:0.2;
-}
-table { 
+
+table {
+    width: 100%;
     border-collapse: collapse;
 }
 
 th, td {
-    padding: 8px 15px;
+    padding: 8px 12px;
+    text-align: left;
+    border: 1px solid rgb(230,230,230);
 }
 
-footer {
-    text-align: center;
-    margin-top: 30px;
+.site-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+}
+
+.site-footer p {
+    margin: 0;
+}
+
+@media (max-width: 960px) {
+    .layout {
+        grid-template-columns: 1fr;
+    }
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .cards,
+    .form-box {
+        grid-template-columns: 1fr;
+    }
+    .site-header {
+        justify-content: center;
+    }
 }
