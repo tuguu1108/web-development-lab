@@ -241,7 +241,7 @@ button {
     transition: background-color 0.15s;
 }
 
-.btn-reset:hover { background-color: rgb(244,129,129); }
+.btn-reset:hover { background-color: rgb(255,129,129); }
 .btn-reset:active { opacity: 0.2; }
 
 .card ul {
@@ -289,3 +289,4 @@ th, td {
         justify-content: center;
     }
 }
+
