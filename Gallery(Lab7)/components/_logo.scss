@@ -1,0 +1,15 @@
+@use "../abstracts/functions" as *;
+
+.logo {
+  width: rem(120);
+  height: rem(120);
+  color: var(--text);
+  display: block;
+
+  // SVG user unit тул rem биш px хэвээр үлдээнэ
+  &__ring,
+  &__dot { transform-origin: 60px 60px; }
+
+  &__ring { animation: spin 8s linear infinite; }
+  &__dot  { animation: pulse 2s ease-in-out infinite; }
+}

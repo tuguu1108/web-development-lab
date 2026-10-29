@@ -1,0 +1,60 @@
+@use "../abstracts/functions" as *;
+@use "../abstracts/mixins" as *;
+
+.flip {
+  perspective: 900px;
+  aspect-ratio: 4 / 3;
+  cursor: pointer;
+  opacity: 0;
+  animation: rise var(--speed) ease-out forwards;
+  animation-delay: calc(var(--i) * var(--stagger));
+
+  @include reduced-motion { opacity: 1; }
+
+  &__inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform .7s cubic-bezier(.4, .2, .2, 1);
+  }
+
+  &:hover &__inner,
+  &:focus-visible &__inner {
+    transform: rotateY(12deg) scale(1.03);
+  }
+
+  &.is-flipped &__inner,
+  &.is-flipped:hover &__inner,
+  &.is-flipped:focus-visible &__inner {
+    transform: rotateY(180deg);
+  }
+
+  &__face {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+
+    &--back {
+      transform: rotateY(180deg);
+      @include flex-center(column);
+      text-align: center;
+      padding: rem(16);
+      background: var(--accent);
+      color: var(--text);
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  &__text { margin: 0; }
+}

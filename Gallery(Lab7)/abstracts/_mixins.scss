@@ -1,0 +1,47 @@
+@use "sass:map";
+@use "tokens" as *;
+
+/// Media query. respond(sm) => max-width, respond(md, up) => min-width
+@mixin respond($bp, $dir: down) {
+  $width: map.get($breakpoints, $bp);
+
+  @if not $width {
+    @error "Тодорхойгүй breakpoint: `#{$bp}`";
+  }
+
+  @if $dir == up {
+    @media (min-width: $width) { @content; }
+  } @else {
+    @media (max-width: $width) { @content; }
+  }
+}
+
+@mixin reduced-motion {
+  @media (prefers-reduced-motion: reduce) { @content; }
+}
+
+@mixin flex-center($direction: row, $gap: null) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+
+  @if $gap {
+    gap: $gap;
+  }
+}
+
+/// Header, panel хоёрт давтагдаж байсан card маягийн хүрээ
+@mixin surface-box {
+  background: var(--surface);
+  border: 2px solid var(--text);
+  border-radius: var(--radius-md);
+}
+
+/// :hover болон :focus-visible хоёрын давхардлыг арилгана
+@mixin hover-focus {
+  &:hover,
+  &:focus-visible {
+    @content;
+  }
+}

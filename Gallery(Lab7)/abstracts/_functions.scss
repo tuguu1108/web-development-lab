@@ -1,0 +1,24 @@
+@use "sass:math";
+@use "sass:color";
+
+/// px -> rem. rem(20) эсвэл rem(20px) => 1.25rem
+@function rem($px, $base: 16) {
+  @if math.unit($px) == "px" {
+    $px: math.div($px, 1px);
+  }
+  @return math.div($px, $base) * 1rem;
+}
+
+/// Дэвсгэр өнгөнд тохирох текстийн өнгө (YIQ тооцоо).
+/// Анхаар: зөвхөн compile-time өнгөнд ажиллана, var(--x)-д биш.
+@function contrast($bg, $light: #fff, $dark: #000) {
+  $r: color.channel($bg, "red", $space: rgb);
+  $g: color.channel($bg, "green", $space: rgb);
+  $b: color.channel($bg, "blue", $space: rgb);
+  $yiq: math.div($r * 299 + $g * 587 + $b * 114, 1000);
+
+  @if $yiq >= 150 {
+    @return $dark;
+  }
+  @return $light;
+}

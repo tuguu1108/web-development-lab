@@ -1,0 +1,19 @@
+@use "../abstracts/tokens" as *;
+
+:root {
+  @each $name, $value in $colors {
+    --#{$name}: #{$value};
+  }
+  @each $name, $value in $radii {
+    --radius-#{$name}: #{$value};
+  }
+  @each $name, $value in $motion {
+    --#{$name}: #{$value};
+  }
+}
+
+:root[data-theme="dark"] {
+  @each $name, $value in $colors-dark {
+    --#{$name}: #{$value};
+  }
+}

@@ -1,0 +1,21 @@
+@use "../abstracts/functions" as *;
+@use "../abstracts/mixins" as *;
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: rem(8);
+  flex-wrap: wrap;
+
+  &__link {
+    padding: rem(8) rem(16);
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    transition: background-color .15s, transform .15s;
+
+    @include hover-focus {
+      background: var(--accent);
+      transform: translateY(-2px);
+    }
+  }
+}

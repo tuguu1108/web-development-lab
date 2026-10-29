@@ -1,0 +1,13 @@
+@use "../abstracts/functions" as *;
+@use "../abstracts/mixins" as *;
+
+.panel {
+  padding: rem(20);
+  margin-bottom: rem(24);
+  @include surface-box;
+
+  &__hint {
+    margin: 0 0 rem(16);
+    opacity: .85;
+  }
+}

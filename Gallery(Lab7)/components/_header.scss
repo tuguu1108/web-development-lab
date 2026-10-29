@@ -1,0 +1,18 @@
+@use "../abstracts/functions" as *;
+@use "../abstracts/mixins" as *;
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: rem(12);
+  padding: rem(16) rem(24);
+  @include surface-box;
+
+  @include respond(sm) {
+    justify-content: center;
+  }
+
+  &__title { margin: 0; }
+}

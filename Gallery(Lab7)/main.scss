@@ -1,0 +1,19 @@
+// abstracts/ (tokens, functions, mixins) өөрөө CSS гаргадаггүй.
+// Partial бүр хэрэгтэй abstracts-аа өөрөө @use хийнэ.
+@use "base/root";
+@use "base/base";
+@use "base/animations";
+
+@use "layout/page";
+
+@use "components/header";
+@use "components/nav";
+@use "components/panel";
+@use "components/button";
+@use "components/gallery";
+@use "components/flip";
+@use "components/media";
+@use "components/logo";
+@use "components/footer";
+
+@use "utilities/utilities";

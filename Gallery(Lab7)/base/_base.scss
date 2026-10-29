@@ -1,0 +1,30 @@
+@use "../abstracts/tokens" as *;
+@use "../abstracts/functions" as *;
+@use "../abstracts/mixins" as *;
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: rem(20);
+  background: var(--bg);
+  color: var(--text);
+  font-family: $font-base;
+  transition: background-color .3s, color .3s;
+}
+
+a { color: var(--text); }
+
+h1, h2, h3 { margin: 0 0 rem(12); }
+
+:focus-visible {
+  outline: 3px solid var(--accent-2);
+  outline-offset: 3px;
+}
+
+@include reduced-motion {
+  *, *::before, *::after {
+    animation: none !important;
+    transition-duration: .01ms !important;
+  }
+}

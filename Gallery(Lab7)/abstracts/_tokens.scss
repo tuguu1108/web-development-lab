@@ -1,0 +1,42 @@
+// Design tokens: зөвхөн өгөгдөл, CSS гаргахгүй.
+
+$font-base: 'Roboto', Arial, sans-serif;
+
+// Light theme (default)
+$colors: (
+  "bg":       rgb(123, 150, 105),
+  "surface":  rgb(64, 78, 59),
+  "text":     rgb(230, 230, 230),
+  "accent":   rgb(108, 132, 134),
+  "accent-2": rgb(255, 129, 129),
+);
+
+// Dark theme: зөвхөн өөрчлөгдөх өнгөнүүд
+$colors-dark: (
+  "bg":      rgb(22, 28, 22),
+  "surface": rgb(38, 48, 38),
+  "text":    rgb(235, 235, 235),
+  "accent":  rgb(120, 150, 152),
+);
+
+$radii: (
+  "sm": 5px,
+  "md": 10px,
+);
+
+$motion: (
+  "speed":   .6s,
+  "stagger": .12s,
+);
+
+$breakpoints: (
+  "sm": 640px,
+  "md": 768px,
+  "lg": 1024px,
+);
+
+$spacers: (
+  1: 8px,
+  2: 16px,
+  3: 24px,
+);

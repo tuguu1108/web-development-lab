@@ -1,0 +1,23 @@
+@use "../abstracts/tokens" as *;
+@use "../abstracts/functions" as *;
+
+// Өнгө: .u-text-accent, .u-bg-accent-2 ...
+@each $name, $value in $colors {
+  .u-text-#{$name} { color: var(--#{$name}); }
+  .u-bg-#{$name} {
+    background-color: var(--#{$name});
+    color: contrast($value);
+  }
+}
+
+// Радиус: .u-rounded-sm, .u-rounded-md
+@each $name, $value in $radii {
+  .u-rounded-#{$name} { border-radius: var(--radius-#{$name}); }
+}
+
+// Зай: .u-mt-1, .u-mb-2, .u-p-3
+@each $key, $size in $spacers {
+  .u-mt-#{$key} { margin-top: rem($size); }
+  .u-mb-#{$key} { margin-bottom: rem($size); }
+  .u-p-#{$key}  { padding: rem($size); }
+}

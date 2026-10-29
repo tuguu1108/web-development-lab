@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Зургийн цомог портал — Лаб 7</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+<div class="page">
+
+    <header class="site-header">
+        <h1 class="site-header__title">Зургийн цомог</h1>
+        <nav class="nav">
+            <a class="nav__link" href="#">Галерей</a>
+            <a class="nav__link" href="../index.html">Анкет</a>
+            <a class="nav__link" href="#">Тусламж</a>
+            <button id="theme-toggle" class="btn" type="button" aria-pressed="false">Харанхуй горим</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="gallery" class="panel">
+            <h2>Галерей</h2>
+            <p class="panel__hint">Зураг дээр дарж эсвэл Tab → Enter дарж эргүүлнэ.</p>
+
+            <div class="grid">
+                <article class="flip" style="--i:0" tabindex="0" aria-label="Зураг 1">
+                    <div class="flip__inner">
+                        <figure class="flip__face flip__face--front"><img class="flip__img" src="img/image1.jpg" alt="Уулын өглөө"></figure>
+                        <div class="flip__face flip__face--back"><h3>Уулын өглөө</h3><p class="flip__text">Хэнтийн нурууны мананцар.</p></div>
+                    </div>
+                </article>
+                <article class="flip" style="--i:1" tabindex="0" aria-label="Зураг 2">
+                    <div class="flip__inner">
+                        <figure class="flip__face flip__face--front"><img class="flip__img" src="img/image2.jpg" alt="Нуурын эрэг"></figure>
+                        <div class="flip__face flip__face--back"><h3>Нуурын эрэг</h3><p class="flip__text">Хөвсгөлийн намуухан үдэш.</p></div>
+                    </div>
+                </article>
+                <article class="flip" style="--i:2" tabindex="0" aria-label="Зураг 3">
+                    <div class="flip__inner">
+                        <figure class="flip__face flip__face--front"><img class="flip__img" src="img/image3.jpg" alt="Говийн манхан"></figure>
+                        <div class="flip__face flip__face--back"><h3>Говийн манхан</h3><p class="flip__text">Хонгорын элсний шөнө.</p></div>
+                    </div>
+                </article>
+                <article class="flip" style="--i:3" tabindex="0" aria-label="Зураг 4">
+                    <div class="flip__inner">
+                        <figure class="flip__face flip__face--front"><img class="flip__img" src="img/image4.jpg" alt="Ой мод"></figure>
+                        <div class="flip__face flip__face--back"><h3>Ой мод</h3><p class="flip__text">Тэрэлжийн намрын өнгө.</p></div>
+                    </div>
+                </article>
+                <article class="flip" style="--i:4" tabindex="0" aria-label="Зураг 5">
+                    <div class="flip__inner">
+                        <figure class="flip__face flip__face--front"><img class="flip__img" src="img/image5.jpg" alt="Хот"></figure>
+                        <div class="flip__face flip__face--back"><h3>Хот</h3><p class="flip__text">Улаанбаатарын орой.</p></div>
+                    </div>
+                </article>
+                <article class="flip" style="--i:5" tabindex="0" aria-label="Зураг 6">
+                    <div class="flip__inner">
+                        <figure class="flip__face flip__face--front"><img class="flip__img" src="img/image6.jpg" alt="Тал нутаг"></figure>
+                        <div class="flip__face flip__face--back"><h3>Тал нутаг</h3><p class="flip__text">Дорнодын уудам тал.</p></div>
+                    </div>
+                </article>
+            </div>
+            <button id="flip-all" class="btn" type="button">Бүгдийг эргүүлэх</button>
+        </section>
+
+        <section id="media" class="panel">
+            <h2>Видео</h2>
+            <video class="video" controls preload="metadata" poster="img/photo1.jpg">
+                <source src="video/clip.webm" type="video/webm">
+                <source src="video/clip.mp4" type="video/mp4">
+                <track kind="subtitles" src="video/clip.mn.vtt" srclang="mn" label="Монгол" default>
+                Таны хөтөч видеог дэмжихгүй байна.
+            </video>
+        </section>
+
+        <section id="map" class="panel">
+            <h2>Газрын зураг</h2>
+            <div class="embed">
+                <iframe class="embed__frame" title="Улаанбаатар хотын газрын зураг" loading="lazy"
+                    src="https://www.openstreetmap.org/export/embed.html?bbox=106.80%2C47.87%2C107.05%2C47.97&amp;layer=mapnik"></iframe>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Inline SVG</h2>
+            <svg class="logo" viewBox="0 0 120 120" role="img" aria-label="Эргэлдэх дүрс">
+                <circle class="logo__ring" cx="60" cy="60" r="44" fill="none" stroke="currentColor" stroke-width="6" stroke-dasharray="40 20"/>
+                <rect class="logo__dot" x="48" y="48" width="24" height="24" rx="6" fill="var(--accent)"/>
+            </svg>
+        </section>
+    </main>
+
+    <footer class="site-footer"><p class="site-footer__text">© 2026 Веб зохиомж — Лаб 7</p></footer>
+</div>
+<script src="Script%20(1).js"></script>
+</body>
+</html>
